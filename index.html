@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Library Interview Questions</title>
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<script type="text/javascript" src="js/ICanHaz.js"></script> 
 		<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
 		<script src='js/jquery.js '></script>
@@ -16,11 +17,7 @@
 <body>
 	<div id="wrapper">
 		<h1>Library Interview Questions</h1>
-		<div class="container">
-			<input id="tableFilter" type="text" placeholder="filter by.."></input>
-			<span class="clear button">Clear</span>
-			<span class="noMatches">no matches</span>
-		</div>
+		<h4 class="lead">Filter by clicking the labels</h4>
 		<div id="siteTable" class="container"></div>
 		<!-- <label><input type="checkbox"> Sort values</label>   -->
 
@@ -28,7 +25,7 @@
 
 	<script id="siteTable" type="text/html">
 		<table>
-		<tr><th class="tHeader">timestamp</th><th class="tHeader">whatkindofinterviewwasit</th><th class="tHeader">whatlevelinterviewwasit</th><th class="tHeader">whatquestionsdidtheyaskyou</th><th class="tHeader">whatquestionsdidyouasktheinterviewers</th><th class="tHeader">whatpositionlevelwasitfor</th><th class="tHeader">whattypeoforganization</th><th class="tHeader">jobfocuswascheckallthatapply</th><th class="tHeader">whereareyou</th><th class="theader">whereareyou_2</th><th class="tHeader">anyothercommentsformeorforyourfellowjobhunters</th></tr>
+		<center><tr><th class="tHeader">Timestamp</th><th class="tHeader">Interview Type</th><th class="tHeader">Level of Interview</th><th class="tHeader">Questions They Asked</th><th class="tHeader">Questions You Asked</th><th class="tHeader">Position</th><th class="tHeader">Organization</th><th class="tHeader">Job Focus</th><th class="tHeader">Where are you?</th><th class="theader">Where are you redux?</th><th class="tHeader">Anythin Else?</th></tr></center>
 		  {{#rows}}
 		  	<tr class="{{id}}"><td>{{timestamp}}</td><td>{{whatkindofinterviewwasit}}</td><td>{{whatlevelinterviewwasit}}</td><td>{{whatquestionsdidtheyaskyou}}</td><td>{{whatquestionsdidyouasktheinterviewers}}</td><td>{{whatpositionlevelwasitfor}}</td><td>{{whattypeoforganization}}</td><td>{{jobfocuswascheckallthatapply}}</td><td>{{whereareyou}}</td><td>{{whereareyou_2}}</td><td>{{anyothercommentsformeorforyourfellowjobhunters}}</td></tr>
 		  {{/rows}}

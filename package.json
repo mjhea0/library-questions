@@ -1,17 +1,12 @@
 {
-  "name": "sheetsee-maplist",
+  "name": "library-questions",
   "version": "0.0.0",
-  "description": "cache google spreadsheet data, draw map and render external tooltips for markers",
+  "description": "library interview questions",
   "main": "index.js",
   "scripts": {
     "start": "browservefy test.js"
   },
-  "repository": "",
-  "keywords": [
-    "sheetsee",
-    "map"
-  ],
-  "author": "jllord",
+  "author": "Michael Herman",
   "license": "BSD",
   "devDependencies": {
     "browserify": "~2.7.2"

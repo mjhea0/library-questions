@@ -1,6 +1,6 @@
 /* Page Specific CSS */
 
-body {font-family: Merriweather; background: #FDE6E6; color: #333; font-size: 16px; border: 10px #FD9393 solid; margin: 0px; padding: 20px 20px 200px 20px; }
+body {font-family: Merriweather; background: white; color: black; font-size: 16px; border-top: 0px black solid; margin: 0px; padding: 20px 20px 200px 20px; }
 h1, h2, h3, h4, h5, h6 {font-family: helvetica;}
 h2 {margin-top: 82px;}
 
@@ -28,7 +28,7 @@ ol {line-height: 24px;}
 #menu li a.a2 {background-color: #CCF4FF;}
 #menu li a:hover {background-color: #e7e7e7; color: #333;}
 
-#wrapper {margin: 0px auto; max-width: 800px; padding-top: 40px; /*margin-left: 250px;*/}
+#wrapper {max-width: 800px; padding-top: 40px;}
 pre {word-wrap: break-word; padding: 14px; background: #F0F0F0; }
 code {font-family: "Consolas", "Ubuntu Mono", monospace; line-height: 22px; font-size: 13px; color: #636363; font-weight: normal;}
 .button {padding: 5px 4px; background-color: #fff; font-size: 10px;}
