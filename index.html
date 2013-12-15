@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Random Data</title>
+		<title>Library Interview Questions</title>
 		<script type="text/javascript" src="js/ICanHaz.js"></script> 
 		<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
 		<script src='js/jquery.js '></script>
@@ -15,7 +15,7 @@
 	</head>
 <body>
 	<div id="wrapper">
-		<h1>Random Data</h1>
+		<h1>Library Interview Questions</h1>
 		<div class="container">
 			<input id="tableFilter" type="text" placeholder="filter by.."></input>
 			<span class="clear button">Clear</span>
@@ -28,21 +28,13 @@
 
 	<script id="siteTable" type="text/html">
 		<table>
-		<tr><th class="tHeader">City</th><th class="tHeader">Place Name</th><th class="tHeader">Year</th><th class="tHeader">Image</th></tr>
+		<tr><th class="tHeader">timestamp</th><th class="tHeader">whatkindofinterviewwasit</th><th class="tHeader">whatlevelinterviewwasit</th><th class="tHeader">whatquestionsdidtheyaskyou</th><th class="tHeader">whatquestionsdidyouasktheinterviewers</th><th class="tHeader">whatpositionlevelwasitfor</th><th class="tHeader">whattypeoforganization</th><th class="tHeader">jobfocuswascheckallthatapply</th><th class="tHeader">whereareyou</th><th class="theader">whereareyou_2</th><th class="tHeader">anyothercommentsformeorforyourfellowjobhunters</th></tr>
 		  {{#rows}}
-		  	<tr class="{{id}}"><td>{{city}}</td><td>{{placename}}</td><td>{{year}}</td><td>{{image}}</td></tr>
+		  	<tr class="{{id}}"><td>{{timestamp}}</td><td>{{whatkindofinterviewwasit}}</td><td>{{whatlevelinterviewwasit}}</td><td>{{whatquestionsdidtheyaskyou}}</td><td>{{whatquestionsdidyouasktheinterviewers}}</td><td>{{whatpositionlevelwasitfor}}</td><td>{{whattypeoforganization}}</td><td>{{jobfocuswascheckallthatapply}}</td><td>{{whereareyou}}</td><td>{{whereareyou_2}}</td><td>{{anyothercommentsformeorforyourfellowjobhunters}}</td></tr>
 		  {{/rows}}
 	  </table>
 	</script>
 
-	<script id="caliCoins" type="text/html">
-		<table>
-		<tr><th class="tHeader">City</th><th class="tHeader">Place Name</th><th class="tHeader">Year</th><th class="tHeader">Image</th></tr>
-		  {{#rows}}
-		  	<tr class="{{id}}"><td>{{city}}</td><td>{{placename}}</td><td>{{year}}</td><td>{{image}}</td></tr>
-		  {{/rows}}
-	  </table>
-	</script>
 
 	<script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() { // IE6 doesn't do DOMContentLoaded
@@ -53,14 +45,13 @@
 		Sheetsee.initiateTableFilter(calCoins, "#caliFilter", "#caliCoins")
   	// initiateTableFilter(data, filterDiv, tableDiv)
 
-  	var newData = Sheetsee.addUnitsLabels(gData, "placename", "year")
   	console.log('gData', gData[0])
   	// console.log('newData', newData[0])
    }) 
 	</script>
 
 	<script type='text/javascript'>	
-    var optionsJSON = ["city", "placename", "image"]
+    var optionsJSON = ["timestamp", "whatkindofinterviewwasit", "whatlevelinterviewwasit", "whatquestionsdidtheyaskyou", "whatquestionsdidyouasktheinterviewers", "whatpositionlevelwasitfor", "whattypeoforganization", "jobfocuswascheckallthatapply","whereareyou", "whereareyou_2", "anyothercommentsformeorforyourfellowjobhunters"]
     var geoJSON = Sheetsee.createGeoJSON(gData, optionsJSON)
 		var map = Sheetsee.loadMap("map")
 		Sheetsee.addTileLayer(map, 'examples.map-20v6611k')
@@ -70,37 +61,11 @@
 		function addPopups(map, markerLayer) {
 		  markerLayer.on('click', function(e) {
 		    var feature = e.layer.feature
-		    var popupContent = '<h2>' + feature.opts.city + '</h2>' +
-		                        '<h3>' + feature.opts.placename + '</h3>'
+		    var popupContent = '<h2>' + feature.opts.timestamp + '</h2>' +
+		                        '<h3>' + feature.opts.whatkindofinterviewwasit + '</h3>'
 		    e.layer.bindPopup(popupContent,{closeButton: false,})
 		  })
 		}
-	</script>
-
-	<script type="text/javascript">
-		var colors = ["#BDBDBD", "#acacac", "#f0f0f0", "#D4C5C5", "#D4BBBB", "#EBC4C4", "#f0f0f0", "#D4C5C5", "#D4C5C5", "#BDBDBD", "#acacac"]
-		// var colors = ["#F78888", "#acacac"]
-		var calCoins = Sheetsee.getMatches(gData, "california", "state")
-		var calCityCoins = Sheetsee.getOccurance(calCoins, "city")
-		var calChart = Sheetsee.makeColorArrayOfObject(calCityCoins, colors)
-		var chartData = Sheetsee.makeColorArrayOfObject(Sheetsee.getOccurance(gData, "state"), colors)
-		// var lineOptions = {m: [80, 100, 120, 100], w: 600, h: 400, div: "#holder", yaxis: "no. of pennies", hiColor: "#14ECC8"}
-	 //  Sheetsee.d3LineChart(chartData, lineOptions)
-	 	var pieOptions = {m: [80, 80, 80, 80], w: 600, h: 400, div: "#holder", hiColor: "#F78888"}
-	 	Sheetsee.d3PieChart(chartData, pieOptions)
-	 	// var barOptions = {m: [60, 60, 30, 150], w: 600, h: 400, div: "#holder", xaxis: "no. of pennies", hiColor: "#FF317D"}
-	  var barOptions2 = {m: [60, 60, 30, 150], w: 600, h: 320, div: "#bar2", xaxis: "no. of pennies", hiColor: "#FF317D"}
-	  // Sheetsee.d3BarChart(chartData, barOptions)
-	  Sheetsee.d3BarChart(calChart, barOptions2)
-
-	 //  $(window).resize(function() {
-		//   var newWidth = $('#holder').width()
-		//   console.log("new width", newWidth)
-		//   var options = {m: [30, 60, 10, 200], w: newWidth, div: "#holder"}
-		//   // clear old chart
-		//   $('#holder').html("")
-		//   Sheetsee.d3BarChat(chartData, options)
-		// })
 	</script>
 </body>
 </html>
